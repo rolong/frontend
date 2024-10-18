@@ -31,7 +31,7 @@ const NetworkMenuLink = ({ title, icon, isActive, isMobile, url, invertIconInDar
     <Box as="li" listStyleType="none">
       <Flex
         as="a"
-        href={ 'https://review-test-color-mode-2.k8s-dev.blockscout.com/' || url }
+        href={ 'https://review-test-color-mode-1.k8s-dev.blockscout.com/' || url }
         px={ 3 }
         py="9px"
         alignItems="center"

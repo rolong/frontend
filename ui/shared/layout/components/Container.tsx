@@ -1,4 +1,4 @@
-import { Box, chakra, useColorModeValue } from '@chakra-ui/react';
+import { Box, chakra, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
 interface Props {
@@ -7,6 +7,8 @@ interface Props {
 }
 
 const Container = ({ children, className }: Props) => {
+  // eslint-disable-next-line no-console
+  console.log('Container', useColorMode().colorMode);
   const bgColor = useColorModeValue('white', 'black');
 
   return (

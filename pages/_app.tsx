@@ -1,4 +1,4 @@
-import { type ChakraProps } from '@chakra-ui/react';
+import { useColorMode, type ChakraProps } from '@chakra-ui/react';
 import { GrowthBookProvider } from '@growthbook/growthbook-react';
 import * as Sentry from '@sentry/react';
 import { QueryClientProvider } from '@tanstack/react-query';
@@ -18,6 +18,7 @@ import { growthBook } from 'lib/growthbook/init';
 import useLoadFeatures from 'lib/growthbook/useLoadFeatures';
 import useNotifyOnNavigation from 'lib/hooks/useNotifyOnNavigation';
 import { SocketProvider } from 'lib/socket/context';
+import theme from 'theme/theme';
 import AppErrorBoundary from 'ui/shared/AppError/AppErrorBoundary';
 import AppErrorGlobalContainer from 'ui/shared/AppError/AppErrorGlobalContainer';
 import GoogleAnalytics from 'ui/shared/GoogleAnalytics';
@@ -47,6 +48,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   useLoadFeatures();
   useNotifyOnNavigation();
+  const { setColorMode } = useColorMode();
+  if (setColorMode) {
+    setColorMode(theme.config.initialColorMode);
+  }
 
   const queryClient = useQueryClientConfig();
 

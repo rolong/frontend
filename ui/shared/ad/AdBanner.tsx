@@ -18,22 +18,23 @@ interface Props {
 }
 
 const AdBanner = ({ className, isLoading, platform }: Props) => {
-  const provider = useAppContext().adBannerProvider;
+  // const provider = useAppContext().adBannerProvider;
 
-  const hasAdblockCookie = cookies.get(cookies.NAMES.ADBLOCK_DETECTED, useAppContext().cookies);
+  // const hasAdblockCookie = cookies.get(cookies.NAMES.ADBLOCK_DETECTED, useAppContext().cookies);
 
-  if (!feature.isEnabled || hasAdblockCookie === 'true' || !provider) {
-    return null;
-  }
+  // if (!feature.isEnabled || hasAdblockCookie === 'true' || !provider) {
+  //   return null;
+  // }
 
-  return (
-    <AdBannerContent
-      className={ className }
-      isLoading={ isLoading }
-      provider={ provider }
-      platform={ platform }
-    />
-  );
+  // return (
+  //   <AdBannerContent
+  //     className={ className }
+  //     isLoading={ isLoading }
+  //     provider={ provider }
+  //     platform={ platform }
+  //   />
+  // );
+  return null;
 };
 
 export default chakra(AdBanner);

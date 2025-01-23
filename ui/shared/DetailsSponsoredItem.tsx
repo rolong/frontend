@@ -14,34 +14,35 @@ interface Props {
 }
 
 const DetailsSponsoredItem = ({ isLoading }: Props) => {
-  const isMobile = useIsMobile();
-  const hasAdblockCookie = cookies.get(cookies.NAMES.ADBLOCK_DETECTED);
+  return null;
+  // const isMobile = useIsMobile();
+  // const hasAdblockCookie = cookies.get(cookies.NAMES.ADBLOCK_DETECTED);
 
-  if (!feature.isEnabled || hasAdblockCookie === 'true') {
-    return null;
-  }
+  // if (!feature.isEnabled || hasAdblockCookie === 'true') {
+  //   return null;
+  // }
 
-  if (isMobile) {
-    return (
-      <GridItem mt={ 5 }>
-        <AdBanner mx="auto" isLoading={ isLoading } display="flex" justifyContent="center"/>
-      </GridItem>
-    );
-  }
+  // if (isMobile) {
+  //   return (
+  //     <GridItem mt={ 5 }>
+  //       <AdBanner mx="auto" isLoading={ isLoading } display="flex" justifyContent="center"/>
+  //     </GridItem>
+  //   );
+  // }
 
-  return (
-    <>
-      <DetailsInfoItem.Label
-        hint="Sponsored banner advertisement"
-        isLoading={ isLoading }
-      >
-        Sponsored
-      </DetailsInfoItem.Label>
-      <DetailsInfoItem.Value>
-        <AdBanner isLoading={ isLoading }/>
-      </DetailsInfoItem.Value>
-    </>
-  );
+  // return (
+  //   <>
+  //     <DetailsInfoItem.Label
+  //       hint="Sponsored banner advertisement"
+  //       isLoading={ isLoading }
+  //     >
+  //       Sponsored
+  //     </DetailsInfoItem.Label>
+  //     <DetailsInfoItem.Value>
+  //       <AdBanner isLoading={ isLoading }/>
+  //     </DetailsInfoItem.Value>
+  //   </>
+  // );
 };
 
 export default React.memo(DetailsSponsoredItem);
